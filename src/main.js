@@ -6,8 +6,10 @@ const app = express()
 const __dirname = dirname(fileURLToPath(import.meta.url))
 
 
-app.set("views", join(__dirname, "views"))
+app.set("views", join(__dirname, "pages"))
 app.set("view engine", "ejs")
+
+app.use(express.static(join(__dirname, "public")))
 
 app.get("/", (req, res) => {
     res.render("index")
