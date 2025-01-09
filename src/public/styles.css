@@ -36,3 +36,38 @@ header nav ul li a {
     color: #333;
     font-weight: 600;
 }
+
+
+
+.hero {
+    text-align: center;
+    background: url('https://via.placeholder.com/1200x500') no-repeat center/cover;
+    color: #fff;
+    padding: 100px 20px;
+}
+
+.hero h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    color: black;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+    color: black;
+}
+
+.hero button {
+    background-color: #ff6b6b;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+.hero button:hover {
+    background-color: #ff4c4c;
+}
