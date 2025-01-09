@@ -37,8 +37,6 @@ header nav ul li a {
     font-weight: 600;
 }
 
-
-
 .hero {
     text-align: center;
     background: url('https://via.placeholder.com/1200x500') no-repeat center/cover;
@@ -70,4 +68,80 @@ header nav ul li a {
 
 .hero button:hover {
     background-color: #ff4c4c;
+}
+
+.featured {
+    padding: 50px 20px;
+    text-align: center;
+}
+
+.featured h2 {
+    font-size: 2rem;
+    margin-bottom: 30px;
+}
+
+.featured .cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.featured .card {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    text-align: left;
+}
+
+.featured .card img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+}
+
+.featured .card .info {
+    padding: 20px;
+}
+
+.featured .card .info h3 {
+    margin: 0;
+    font-size: 1.2rem;
+}.featured {
+    padding: 50px 20px;
+    text-align: center;
+}
+
+.featured h2 {
+    font-size: 2rem;
+    margin-bottom: 30px;
+}
+
+.featured .cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.featured .card {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    text-align: left;
+}
+
+.featured .card img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+}
+
+.featured .card .info {
+    padding: 20px;
+}
+
+.featured .card .info h3 {
+    margin: 0;
+    font-size: 1.2rem;
 }
