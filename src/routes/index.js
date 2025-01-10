@@ -16,12 +16,21 @@ const cards = [
     }
 ]
 
+const cardsRaza = [
+    {
+        raza: "Siames",
+        tamano: "Mediano",
+        pelaje: "Corto",
+        // tags: ["Inteligente", "Ruidosos", "tonto"]
+    }
+]
+
 router.get("/", (req, res) => {
     res.render("index", {cards})
 })
 
 router.get("/razas", (req, res) => {
-    res.render("razas")
+    res.render("razas", {cardsRaza})
 })
 
 router.get("/favoritos", (req, res) => {

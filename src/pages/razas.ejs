@@ -11,27 +11,30 @@
     <div class="body-container">
         <%- include("../componentes/header.ejs") %>
         
-    <h2 class="main-title">Razas de Gatos</h2>
+        <h2 class="main-title">Razas de Gatos</h2>
 
-    <div class="filters">
-        <input type="text" placeholder="Buscar raza...">
-        <select>
-            <option value="">Todos los tamaños</option>
-            <option value="pequeño">Pequeño</option>
-            <option value="mediano">Mediano</option>
-            <option value="grande">Grande</option>
-        </select>
-        <select>
-            <option value="">Todos los pelajes</option>
-            <option value="corto">Corto</option>
-            <option value="largo">Largo</option>
-        </select>
-    </div>
+        <div class="filters">
+            <input type="text" placeholder="Buscar raza...">
+            <select>
+                <option value="">Todos los tamaños</option>
+                <option value="pequeño">Pequeño</option>
+                <option value="mediano">Mediano</option>
+                <option value="grande">Grande</option>
+            </select>
+            <select>
+                <option value="">Todos los pelajes</option>
+                <option value="corto">Corto</option>
+                <option value="largo">Largo</option>
+            </select>
+        </div>
 
-    <div class="cards">
-        <%- include("../componentes/cardRazas.ejs") %>
-    </div>
-        <%- include("../componentes/footer.ejs") %>
+        <div class="cards">
+            <% cardsRaza.forEach(card => { %>
+                <%- include("../componentes/cardRaza.ejs", card) %>
+            <% }) %>
+        </div>
+
+            <%- include("../componentes/footer.ejs") %>
     </div>
 </body>
 </html>
