@@ -14,8 +14,9 @@
         <section class="featured">
             <h2>Razas Destacadas</h2>
             <div class="cards">
-                <%- include("../componentes/card.ejs") %>
-                
+                <% cards.forEach(card => { %>
+                  <%- include("../componentes/card.ejs", card) %>
+                <% }) %>
             </div>
         </section>
         
