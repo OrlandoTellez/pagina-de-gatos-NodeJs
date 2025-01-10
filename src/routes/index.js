@@ -13,22 +13,6 @@ const cards = [
     {
         nombre: "Maine Coon",
         imagen: "https://via.placeholder.com/300"
-    },
-    {
-        nombre: "Maine Coon",
-        imagen: "https://via.placeholder.com/300"
-    },
-    {
-        nombre: "Maine Coon",
-        imagen: "https://via.placeholder.com/300"
-    },
-    {
-        nombre: "Maine Coon",
-        imagen: "https://via.placeholder.com/300"
-    },
-    {
-        nombre: "Maine Coon",
-        imagen: "https://via.placeholder.com/300"
     }
 ]
 
