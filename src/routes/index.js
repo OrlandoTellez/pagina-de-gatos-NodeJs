@@ -21,7 +21,37 @@ const cardsRaza = [
         raza: "Siames",
         tamano: "Mediano",
         pelaje: "Corto",
-        // tags: ["Inteligente", "Ruidosos", "tonto"]
+        tags: ["Inteligente", "Ruidosos", "tonto"]
+    },
+    {
+        raza: "Siames",
+        tamano: "Mediano",
+        pelaje: "Corto",
+        tags: ["Inteligente", "Ruidosos", "tonto"]
+    },
+    {
+        raza: "Siames",
+        tamano: "Mediano",
+        pelaje: "Corto",
+        tags: ["Inteligente", "Ruidosos", "tonto"]
+    },
+    {
+        raza: "Siames",
+        tamano: "Mediano",
+        pelaje: "Corto",
+        tags: ["Inteligente", "Ruidosos", "tonto"]
+    },
+    {
+        raza: "Siames",
+        tamano: "Mediano",
+        pelaje: "Corto",
+        tags: ["Inteligente", "Ruidosos", "tonto"]
+    },
+    {
+        raza: "Siames",
+        tamano: "Mediano",
+        pelaje: "Corto",
+        tags: ["Inteligente", "Ruidosos", "tonto"]
     }
 ]
 
