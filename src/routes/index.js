@@ -18,42 +18,121 @@ const cards = [
 
 const cardsRaza = [
     {
-        raza: "Siames",
+        raza: "Siamés",
         tamano: "Mediano",
         pelaje: "Corto",
-        tags: ["Inteligente", "Ruidosos", "tonto"]
+        tags: [
+            "Inteligente",
+            "Social",
+            "Activo"
+        ]
     },
     {
-        raza: "Siames",
-        tamano: "Mediano",
-        pelaje: "Corto",
-        tags: ["Inteligente", "Ruidosos", "tonto"]
+        raza: "Persa",
+        tamano: "Grande",
+        pelaje: "Largo",
+        tags: [
+            "Tranquilo",
+            "Cariñoso"
+        ]
     },
     {
-        raza: "Siames",
-        tamano: "Mediano",
-        pelaje: "Corto",
-        tags: ["Inteligente", "Ruidosos", "tonto"]
+        raza: "Maine Coon",
+        tamano: "Grande",
+        pelaje: "Largo",
+        tags: [
+            "Juguetón",
+            "Gentil"
+        ]
     },
     {
-        raza: "Siames",
+        raza: "Bengalí",
         tamano: "Mediano",
         pelaje: "Corto",
-        tags: ["Inteligente", "Ruidosos", "tonto"]
+        tags: [
+            "Activo",
+            "Curioso"
+        ]
     },
     {
-        raza: "Siames",
-        tamano: "Mediano",
-        pelaje: "Corto",
-        tags: ["Inteligente", "Ruidosos", "tonto"]
+        raza: "Ragdoll",
+        tamano: "Grande",
+        pelaje: "Largo",
+        tags: [
+            "Dócil",
+            "Cariñoso"
+        ]
     },
     {
-        raza: "Siames",
+        raza: "Sphynx",
         tamano: "Mediano",
         pelaje: "Corto",
-        tags: ["Inteligente", "Ruidosos", "tonto"]
+        tags: [
+            "Juguetón",
+            "Inteligente"
+        ]
+    },
+    {
+        raza: "Birmano",
+        tamano: "Mediano",
+        pelaje: "Semi-largo",
+        tags: [
+            "Cariñoso",
+            "Gentil"
+        ]
+    },
+    {
+        raza: "Angora Turco",
+        tamano: "Mediano",
+        pelaje: "Largo",
+        tags: [
+            "Elegante",
+            "Activo",
+            "Leal"
+        ]
+    },
+    {
+        raza: "Abisinio",
+        tamano: "Pequeño",
+        pelaje: "Corto",
+        tags: [
+            "Curioso",
+            "Juguetón",
+            "Energético"
+        ]
+    },
+    {
+        raza: "Scottish Fold",
+        tamano: "Mediano",
+        pelaje: "Corto o Largo",
+        tags: [
+            "Dócil",
+            "Tranquilo",
+            "Adaptable"
+        ]
+    },
+    {
+        raza: "British Shorthair",
+        tamano: "Grande",
+        pelaje: "Corto",
+        tags: [
+            "Calmado",
+            "Cariñoso",
+            "Independiente"
+        ]
+    },
+    {
+        raza: "Oriental",
+        tamano: "Mediano",
+        pelaje: "Corto",
+        tags: [
+            "Extrovertido",
+            "Leal",
+            "Conversador"
+        ]
     }
 ]
+
 
 router.get("/", (req, res) => {
     res.render("index", {cards})
