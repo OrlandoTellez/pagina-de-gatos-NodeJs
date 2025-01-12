@@ -21,118 +21,87 @@ const cardsRaza = [
         raza: "Siamés",
         tamano: "Mediano",
         pelaje: "Corto",
-        tags: [
-            "Inteligente",
-            "Social",
-            "Activo"
-        ]
+        tags: ["Inteligente", "Social", "Activo"],
+        imagen: "https://cdn2.thecatapi.com/images/1.jpg"  // Nueva imagen
     },
     {
         raza: "Persa",
         tamano: "Grande",
         pelaje: "Largo",
-        tags: [
-            "Tranquilo",
-            "Cariñoso"
-        ]
+        tags: ["Tranquilo", "Cariñoso"],
+        imagen: "https://cdn2.thecatapi.com/images/2.jpg"  // Nueva imagen
     },
     {
         raza: "Maine Coon",
         tamano: "Grande",
         pelaje: "Largo",
-        tags: [
-            "Juguetón",
-            "Gentil"
-        ]
+        tags: ["Juguetón", "Gentil"],
+        imagen: "https://cdn2.thecatapi.com/images/3.jpg"  // Nueva imagen
     },
     {
         raza: "Bengalí",
         tamano: "Mediano",
         pelaje: "Corto",
-        tags: [
-            "Activo",
-            "Curioso"
-        ]
+        tags: ["Activo", "Curioso"],
+        imagen: "https://cdn2.thecatapi.com/images/5.jpg"  // Nueva imagen
     },
     {
         raza: "Ragdoll",
         tamano: "Grande",
         pelaje: "Largo",
-        tags: [
-            "Dócil",
-            "Cariñoso"
-        ]
+        tags: ["Dócil", "Cariñoso"],
+        imagen: "https://cdn2.thecatapi.com/images/5.jpg"  // Nueva imagen
     },
     {
         raza: "Sphynx",
         tamano: "Mediano",
         pelaje: "Corto",
-        tags: [
-            "Juguetón",
-            "Inteligente"
-        ]
+        tags: ["Juguetón", "Inteligente"],
+        imagen: "https://cdn2.thecatapi.com/images/9.jpg"  // Nueva imagen
     },
     {
         raza: "Birmano",
         tamano: "Mediano",
         pelaje: "Semi-largo",
-        tags: [
-            "Cariñoso",
-            "Gentil"
-        ]
+        tags: ["Cariñoso", "Gentil"],
+        imagen: "https://cdn2.thecatapi.com/images/7.jpg"  // Nueva imagen
     },
     {
         raza: "Angora Turco",
         tamano: "Mediano",
         pelaje: "Largo",
-        tags: [
-            "Elegante",
-            "Activo",
-            "Leal"
-        ]
+        tags: ["Elegante", "Activo", "Leal"],
+        imagen: "https://cdn2.thecatapi.com/images/8.jpg"  // Nueva imagen
     },
     {
         raza: "Abisinio",
         tamano: "Pequeño",
         pelaje: "Corto",
-        tags: [
-            "Curioso",
-            "Juguetón",
-            "Energético"
-        ]
+        tags: ["Curioso", "Juguetón", "Energético"],
+        imagen: "https://cdn2.thecatapi.com/images/9.jpg"  // Nueva imagen
     },
     {
         raza: "Scottish Fold",
         tamano: "Mediano",
         pelaje: "Corto o Largo",
-        tags: [
-            "Dócil",
-            "Tranquilo",
-            "Adaptable"
-        ]
+        tags: ["Dócil", "Tranquilo", "Adaptable"],
+        imagen: "https://cdn2.thecatapi.com/images/10.jpg"  // Nueva imagen
     },
     {
         raza: "British Shorthair",
         tamano: "Grande",
         pelaje: "Corto",
-        tags: [
-            "Calmado",
-            "Cariñoso",
-            "Independiente"
-        ]
+        tags: ["Calmado", "Cariñoso", "Independiente"],
+        imagen: "https://cdn2.thecatapi.com/images/11.jpg"  // Nueva imagen
     },
     {
         raza: "Oriental",
         tamano: "Mediano",
         pelaje: "Corto",
-        tags: [
-            "Extrovertido",
-            "Leal",
-            "Conversador"
-        ]
+        tags: ["Extrovertido", "Leal", "Conversador"],
+        imagen: "https://cdn2.thecatapi.com/images/12.jpg"  // Nueva imagen
     }
 ]
-
 
 router.get("/", (req, res) => {
     res.render("index", {cards})
