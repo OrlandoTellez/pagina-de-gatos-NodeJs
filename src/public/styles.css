@@ -8,6 +8,10 @@ body{
 
 }
 
+a{
+    text-decoration: none;
+}
+
 header {
     display: flex;
     justify-content: space-between;
@@ -60,7 +64,7 @@ header nav ul li a {
     color: black;
 }
 
-.hero button {
+.hero a {
     background-color: #ff6b6b;
     color: #fff;
     border: none;
@@ -70,7 +74,7 @@ header nav ul li a {
     cursor: pointer;
 }
 
-.hero button:hover {
+.hero a:hover {
     background-color: #ff4c4c;
 }
 
