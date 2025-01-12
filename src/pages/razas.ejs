@@ -14,18 +14,21 @@
         <h2 class="main-title">Razas de Gatos</h2>
 
         <div class="filters">
-            <input type="text" placeholder="Buscar raza...">
-            <select>
-                <option value="">Todos los tamaños</option>
-                <option value="pequeño">Pequeño</option>
-                <option value="mediano">Mediano</option>
-                <option value="grande">Grande</option>
-            </select>
-            <select>
-                <option value="">Todos los pelajes</option>
-                <option value="corto">Corto</option>
-                <option value="largo">Largo</option>
-            </select>
+            <form method="GET" action="/razas">
+                <input type="text" name="search" placeholder="Buscar raza..." value="<%= search || '' %>">
+                <select name="tamano">
+                    <option value="">Todos los tamaños</option>
+                    <option value="pequeño" <%= tamano === 'pequeño' ? 'selected' : '' %>>Pequeño</option>
+                    <option value="mediano" <%= tamano === 'mediano' ? 'selected' : '' %>>Mediano</option>
+                    <option value="grande" <%= tamano === 'grande' ? 'selected' : '' %>>Grande</option>
+                </select>
+                <select name="pelaje">
+                    <option value="">Todos los pelajes</option>
+                    <option value="corto" <%= pelaje === 'corto' ? 'selected' : '' %>>Corto</option>
+                    <option value="largo" <%= pelaje === 'largo' ? 'selected' : '' %>>Largo</option>
+                </select>
+                <button type="submit">Filtrar</button>
+            </form>
         </div>
 
         <div class="cards">
