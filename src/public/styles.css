@@ -5,6 +5,8 @@
 }
 body{
     background-color: #fef8f5;
+    max-width: 1024px;
+    margin: auto;
 
 }
 
@@ -29,6 +31,14 @@ header .logo {
 header .logo img {
     height: 40px;
     margin-right: 10px;
+}
+
+header .menu-icon{
+    cursor: pointer;
+}
+
+header nav{
+    display: none;
 }
 
 header nav ul {
@@ -208,6 +218,7 @@ footer .newsletter button {
 }
 
 .filters {
+    width: 100%;
     display: flex;
     justify-content: center;
     gap: 15px;
@@ -218,7 +229,6 @@ footer .newsletter button {
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 5px;
-    width: 200px;
 }
 
 .cards {
@@ -267,4 +277,15 @@ footer .newsletter button {
     font-size: 12px;
     padding: 5px 10px;
     border-radius: 5px;
+}
+
+@media only screen and (min-width: 1024px){
+    header nav{
+        display: block;
+    }
+
+    .menu-icon{
+        display:none;
+    }
+    
 }
