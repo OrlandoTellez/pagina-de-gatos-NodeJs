@@ -5,6 +5,7 @@
 }
 body{
     background-color: #fef8f5;
+    width: 100%;
     max-width: 1024px;
     margin: auto;
 
@@ -209,12 +210,19 @@ footer .newsletter button {
     cursor: pointer;
 }
 
-// Razas
+/* Razas */ 
 
 .main-title {
     text-align: center;
-    margin: 30px 0;
-    color: #333;
+    padding: 20px;
+}
+
+.btn-filtrar {
+    background: #ff6b6b;
+    padding: 10px 30px;
+    color: white;
+    border: none;
+    border-radius: 5px;
 }
 
 .filters {
@@ -276,8 +284,11 @@ footer .newsletter button {
     color: #ff6b6b;
     font-size: 12px;
     padding: 5px 10px;
-    border-radius: 5px;
+    border-
+    radius: 5px;
 }
+
+
 
 @media only screen and (min-width: 1024px){
     header nav{
