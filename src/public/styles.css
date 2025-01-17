@@ -223,14 +223,24 @@ footer .newsletter button {
     color: white;
     border: none;
     border-radius: 5px;
+    cursor: pointer;
 }
 
 .filters {
     width: 100%;
     display: flex;
     justify-content: center;
+    align-items: center;
     gap: 15px;
-    margin-bottom: 30px;
+    padding: 30px;
+
+    && form{
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        gap: 20px;
+    }
+    
 }
 
 .filters input, .filters select {
@@ -297,6 +307,26 @@ footer .newsletter button {
 
     .menu-icon{
         display:none;
+    }
+
+
+    /* Pagina Razas */
+    .filters {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 15px;
+        padding: 30px;
+    
+        && form{
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            width: 100%;
+            gap: 20px;
+        }
+        
     }
     
 }
