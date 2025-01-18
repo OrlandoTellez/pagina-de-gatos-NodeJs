@@ -14,8 +14,9 @@
         <h2 class="main-title">Razas de Gatos</h2>
 
         <div class="filters">
-            <form method="GET" action="/razas">
-                <input type="text" name="search" placeholder="Buscar raza..." value="<%= search || '' %>">
+            <form id="filterForm">
+                <input type="text" name="search" placeholder="Buscar raza..." 
+                       value="<%= search || '' %>">
                 <select name="tamano">
                     <option value="">Todos los tamaños</option>
                     <option value="pequeño" <%= tamano === 'pequeño' ? 'selected' : '' %>>Pequeño</option>
@@ -27,7 +28,7 @@
                     <option value="corto" <%= pelaje === 'corto' ? 'selected' : '' %>>Corto</option>
                     <option value="largo" <%= pelaje === 'largo' ? 'selected' : '' %>>Largo</option>
                 </select>
-                <button  class="btn-filtrar" type="submit">Filtrar</button>
+                <button class="btn-filtrar" type="submit">Filtrar</button>
             </form>
         </div>
 

@@ -108,31 +108,39 @@ router.get("/", (req, res) => {
 })
 
 router.get("/razas", (req, res) => {
-    const { tamano, pelaje, search } = req.query;
+    const { tamano, pelaje, search } = req.query
 
-    let filteredCards = cardsRaza;
+    let filteredCards = cardsRaza
 
     if (tamano) {
-        filteredCards = filteredCards.filter(card => card.tamano.toLowerCase() === tamano.toLowerCase());
+        filteredCards = filteredCards.filter(card => 
+            card.tamano.toLowerCase() === tamano.toLowerCase()
+        )
     }
 
     if (pelaje) {
-        filteredCards = filteredCards.filter(card => card.pelaje.toLowerCase() === pelaje.toLowerCase());
+        filteredCards = filteredCards.filter(card => 
+            card.pelaje.toLowerCase() === pelaje.toLowerCase()
+        )
     }
 
     if (search) {
         filteredCards = filteredCards.filter(card => 
             card.raza.toLowerCase().includes(search.toLowerCase()) ||
             card.tags.some(tag => tag.toLowerCase().includes(search.toLowerCase()))
-        );
+        )
     }
-    
-    res.render("razas", { 
-        cardsRaza: filteredCards,
-        search: search || "",
-        tamano: tamano || "",
-        pelaje: pelaje || ""
-    });
+
+    if (req.xhr) {
+        res.render("cardRaza", { cardsRaza: filteredCards })
+    } else {
+        res.render("razas", { 
+            cardsRaza: filteredCards,
+            search: search || "",
+            tamano: tamano || "",
+            pelaje: pelaje || ""
+        })
+    }
     
     
 })
