@@ -103,6 +103,8 @@ const cardsRaza = [
     }
 ]
 
+const favoritos =[]
+
 router.get("/", (req, res) => {
     res.render("index", {cards})
 })

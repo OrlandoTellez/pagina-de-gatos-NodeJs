@@ -1,44 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Razas</title>
     <link rel="stylesheet" href="styles.css">
-
+    <script src="../js/index.js"></script>
 </head>
+
 <body>
     <div class="body-container">
         <%- include("../componentes/header.ejs") %>
-        
-        <h2 class="main-title">Razas de Gatos</h2>
 
-        <div class="filters">
-            <form id="filterForm">
-                <input type="text" name="search" placeholder="Buscar raza..." 
-                       value="<%= search || '' %>">
-                <select name="tamano">
-                    <option value="">Todos los tamaños</option>
-                    <option value="pequeño" <%= tamano === 'pequeño' ? 'selected' : '' %>>Pequeño</option>
-                    <option value="mediano" <%= tamano === 'mediano' ? 'selected' : '' %>>Mediano</option>
-                    <option value="grande" <%= tamano === 'grande' ? 'selected' : '' %>>Grande</option>
-                </select>
-                <select name="pelaje">
-                    <option value="">Todos los pelajes</option>
-                    <option value="corto" <%= pelaje === 'corto' ? 'selected' : '' %>>Corto</option>
-                    <option value="largo" <%= pelaje === 'largo' ? 'selected' : '' %>>Largo</option>
-                </select>
-                <button class="btn-filtrar" type="submit">Filtrar</button>
-            </form>
-        </div>
+            <h2 class="main-title">Razas de Gatos</h2>
 
-        <div class="cards">
-            <% cardsRaza.forEach(card => { %>
-                <%- include("../componentes/cardRaza.ejs", card) %>
-            <% }) %>
-        </div>
+            <div class="filters">
+                <form id="filterForm">
+                    <input type="text" name="search" placeholder="Buscar raza..." value="<%= search || '' %>">
+                    <select name="tamano">
+                        <option value="">Todos los tamaños</option>
+                        <option value="pequeño" <%=tamano==='pequeño' ? 'selected' : '' %>>Pequeño</option>
+                        <option value="mediano" <%=tamano==='mediano' ? 'selected' : '' %>>Mediano</option>
+                        <option value="grande" <%=tamano==='grande' ? 'selected' : '' %>>Grande</option>
+                    </select>
+                    <select name="pelaje">
+                        <option value="">Todos los pelajes</option>
+                        <option value="corto" <%=pelaje==='corto' ? 'selected' : '' %>>Corto</option>
+                        <option value="largo" <%=pelaje==='largo' ? 'selected' : '' %>>Largo</option>
+                    </select>
+                    <button class="btn-filtrar" type="submit">Filtrar</button>
+                </form>
+            </div>
+
+            <div class="cards">
+                <% cardsRaza.forEach(card=> { %>
+                    <%- include("../componentes/cardRaza.ejs", card) %>
+                        <% }) %>
+            </div>
 
             <%- include("../componentes/footer.ejs") %>
     </div>
 </body>
+
 </html>
