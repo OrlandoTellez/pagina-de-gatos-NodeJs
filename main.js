@@ -15,6 +15,6 @@ app.use(express.static(join(__dirname, "src/public")))
 app.use(router)
 
 
-app.listen(3000, () => {
-    console.log("Servidor iniciado en: http://localhost:" + 3000)
+app.listen(4000, () => {
+    console.log("Servidor iniciado en: http://localhost:" + 4000)
 })
