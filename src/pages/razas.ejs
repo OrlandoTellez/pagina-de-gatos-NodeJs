@@ -20,14 +20,14 @@
                     <input type="text" name="search" placeholder="Buscar raza..." value="<%= search || '' %>">
                     <select name="tamano">
                         <option value="">Todos los tamaños</option>
-                        <option value="pequeño" <%=tamano==='pequeño' ? 'selected' : '' %>>Pequeño</option>
-                        <option value="mediano" <%=tamano==='mediano' ? 'selected' : '' %>>Mediano</option>
-                        <option value="grande" <%=tamano==='grande' ? 'selected' : '' %>>Grande</option>
+                        <option value="pequeño" <%=size==='pequeño' ? 'selected' : '' %>>Pequeño</option>
+                        <option value="mediano" <%=size==='mediano' ? 'selected' : '' %>>Mediano</option>
+                        <option value="grande" <%=size==='grande' ? 'selected' : '' %>>Grande</option>
                     </select>
                     <select name="pelaje">
                         <option value="">Todos los pelajes</option>
-                        <option value="corto" <%=pelaje==='corto' ? 'selected' : '' %>>Corto</option>
-                        <option value="largo" <%=pelaje==='largo' ? 'selected' : '' %>>Largo</option>
+                        <option value="corto" <%=coat==='corto' ? 'selected' : '' %>>Corto</option>
+                        <option value="largo" <%=coat==='largo' ? 'selected' : '' %>>Largo</option>
                     </select>
                     <button class="btn-filtrar" type="submit">Filtrar</button>
                 </form>

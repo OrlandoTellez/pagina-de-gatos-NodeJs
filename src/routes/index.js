@@ -1,4 +1,5 @@
 import { Router } from "express";
+import gatos from "../api/gatos.js";
 
 const router = Router()
 const cards = [
@@ -15,6 +16,18 @@ const cards = [
         imagen: "https://cdn2.thecatapi.com/images/12.jpg"  
     }
 ]
+
+// const consumirApi = async () => {
+//     try{
+//         const response = await fetch(gatos)
+//         const data = await response.json
+//         return data
+//     }catch(err){
+//         console.error(err)
+//     }
+// }
+
+console.log(gatos)
 
 const cardsRaza = [
     {
@@ -109,27 +122,35 @@ router.get("/", (req, res) => {
     res.render("index", {cards})
 })
 
+// {
+//     breed: 'Abyssinian',
+//     size: '7  -  10',
+//     coat: 'Coated',
+//     image: '0XYvRd7oD',
+//     characteristics: [ 'Active', 'Energetic', 'Independent', 'Intelligent', 'Gentle' ]
+//   },
+
 router.get("/razas", (req, res) => {
-    const { tamano, pelaje, search } = req.query
+    const { size, coat, search } = req.query
+    
+    let filteredCards = gatos
 
-    let filteredCards = cardsRaza
-
-    if (tamano) {
+    if (size) {
         filteredCards = filteredCards.filter(card => 
-            card.tamano.toLowerCase() === tamano.toLowerCase()
+            card.size.toLowerCase() === coat.toLowerCase()
         )
     }
 
-    if (pelaje) {
+    if (coat) {
         filteredCards = filteredCards.filter(card => 
-            card.pelaje.toLowerCase() === pelaje.toLowerCase()
+            card.coat.toLowerCase() === coat.toLowerCase()
         )
     }
 
     if (search) {
         filteredCards = filteredCards.filter(card => 
-            card.raza.toLowerCase().includes(search.toLowerCase()) ||
-            card.tags.some(tag => tag.toLowerCase().includes(search.toLowerCase()))
+            card.breed.toLowerCase().includes(search.toLowerCase()) ||
+            card.characteristics.some(tag => tag.toLowerCase().includes(search.toLowerCase()))
         )
     }
 
@@ -139,8 +160,8 @@ router.get("/razas", (req, res) => {
         res.render("razas", { 
             cardsRaza: filteredCards,
             search: search || "",
-            tamano: tamano || "",
-            pelaje: pelaje || ""
+            size: size || "",
+            coat: coat || ""
         })
     }
     
