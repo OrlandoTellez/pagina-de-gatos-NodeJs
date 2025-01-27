@@ -1,5 +1,16 @@
 import gatos from "../api/gatos.js";
 
+
+const gatosConvertidos = gatos.map(gato => {
+    const [minSizeInInches, maxSizeInInches] = gato.size.split(' - ').map(Number);
+    const minSizeInCm = (minSizeInInches * 2.54).toFixed(2);
+    const maxSizeInCm = (maxSizeInInches * 2.54).toFixed(2);
+    return {
+        ...gato,
+        size: `${minSizeInCm} - ${maxSizeInCm} cm`
+    };
+});
+
 const cards = [
     {
         raza: "Scottish Fold",
@@ -23,7 +34,7 @@ export const getIndex = async (req, res) => {
 export const getRazas = async (req, res) => {
     const { size, coat, search } = req.query
 
-    let gatosFiltrados = gatos
+    let gatosFiltrados = gatosConvertidos
 
     if (size) {
         gatosFiltrados = gatosFiltrados.filter(card => 
