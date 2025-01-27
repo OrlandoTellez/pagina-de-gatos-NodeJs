@@ -1,15 +1,16 @@
-import gatos from "../api/gatos.js";
+import gatos from "../api/gatos.js"
 
 
 const gatosConvertidos = gatos.map(gato => {
-    const [minSizeInInches, maxSizeInInches] = gato.size.split(' - ').map(Number);
-    const minSizeInCm = (minSizeInInches * 2.54).toFixed(2);
-    const maxSizeInCm = (maxSizeInInches * 2.54).toFixed(2);
+    const [minSizeInInches, maxSizeInInches] = gato.size.split(' - ').map(Number)
+    const minSizeInCm = (minSizeInInches * 2.54).toFixed(2)
+    const maxSizeInCm = (maxSizeInInches * 2.54).toFixed(2)
     return {
         ...gato,
-        size: `${minSizeInCm} - ${maxSizeInCm} cm`
-    };
-});
+        coat: gato.coat === "Coated" ? "con pelaje" : "sin pelaje",
+        size: `${minSizeInCm} - ${maxSizeInCm}`
+    }
+})
 
 const cards = [
     {
@@ -31,23 +32,45 @@ export const getIndex = async (req, res) => {
     res.render("index", {cards})
 }
 
+
+
 export const getRazas = async (req, res) => {
     const { size, coat, search } = req.query
 
     let gatosFiltrados = gatosConvertidos
 
-    if (size) {
-        gatosFiltrados = gatosFiltrados.filter(card => 
-            card.size.toLowerCase() === coat.toLowerCase()
-        )
+    const sizeRanges = {
+        pequeño: [0, 30], 
+        mediano: [30, 60], 
+        grande: [60, 300] 
+    };
+
+
+    if (size && sizeRanges[size]) {
+        const [minRange, maxRange] = sizeRanges[size]
+    
+        gatosFiltrados = gatosFiltrados.filter(card => {
+            const sizeParts = card.size.split(" - ")
+            if (sizeParts.length !== 2) {
+                console.error("Error en el formato de tamaño:", card.size)
+                return false
+            }
+    
+            const [minSize, maxSize] = sizeParts.map(size => Number(size.trim()))
+            console.log(`Comparando: min=${minSize}, max=${maxSize} con rango=${minRange}-${maxRange}`)
+    
+            return minSize >= minRange && maxSize <= maxRange
+        })
+    
     }
 
+    
     if (coat) {
         gatosFiltrados = gatosFiltrados.filter(card => 
             card.coat.toLowerCase() === coat.toLowerCase()
         )
     }
-
+    
     if (search) {
         gatosFiltrados = gatosFiltrados.filter(card => 
             card.breed.toLowerCase().includes(search.toLowerCase()) ||
@@ -62,6 +85,7 @@ export const getRazas = async (req, res) => {
         coat: coat || ""
     })
 }
+
 
 export const getFavoritos = async (req, res) => {
     res.render("favoritos")
