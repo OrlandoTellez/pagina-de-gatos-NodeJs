@@ -26,19 +26,19 @@ export const getRazas = async (req, res) => {
     let gatosFiltrados = gatos
 
     if (size) {
-        filteredCards = filteredCards.filter(card => 
+        gatosFiltrados = gatosFiltrados.filter(card => 
             card.size.toLowerCase() === coat.toLowerCase()
         )
     }
 
     if (coat) {
-        filteredCards = filteredCards.filter(card => 
+        gatosFiltrados = gatosFiltrados.filter(card => 
             card.coat.toLowerCase() === coat.toLowerCase()
         )
     }
 
     if (search) {
-        filteredCards = filteredCards.filter(card => 
+        gatosFiltrados = gatosFiltrados.filter(card => 
             card.breed.toLowerCase().includes(search.toLowerCase()) ||
             card.characteristics.some(tag => tag.toLowerCase().includes(search.toLowerCase()))
         )
