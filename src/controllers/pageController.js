@@ -87,6 +87,8 @@ export const getRazas = async (req, res) => {
 }
 
 
+let cardFavoritos = []
+
 export const getFavoritos = async (req, res) => {
-    res.render("favoritos")
+    res.render("favoritos", {cardFavoritos: cardFavoritos})
 }

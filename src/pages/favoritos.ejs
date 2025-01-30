@@ -10,7 +10,48 @@
 <body>
     <div>
         <%- include("../componentes/header.ejs") %>
-
+        
+        <div class="cards" id="favoritos-container"></div>
+        
+        <script>
+            document.addEventListener("DOMContentLoaded", () => {
+                const contenedorFavoritos = document.getElementById("favoritos-container");
+                let favoritos = JSON.parse(localStorage.getItem("favoritos")) || []
+        
+                if (favoritos.length === 0) {
+                    contenedorFavoritos.innerHTML = "<p>No hay favoritos aún.</p>";
+                    return
+                }
+        
+                favoritos.forEach(gato => {
+                    const cardHTML = `
+                        <div class="card">
+                            <img src="https://cdn2.thecatapi.com/images/${gato.image}.jpg" alt="${gato.breed}">
+                            <div class="card-content">
+                                <h3>${gato.breed}</h3>
+                                <p>Tamaño: ${gato.size}</p>
+                                <p>Pelaje: ${gato.coat}</p>
+                                <div class="tags">${gato.characteristics.join(", ")}</div>
+                                <div class="button">
+                                    <button class="btn-remove" data-breed="${gato.breed}">Eliminar</button>
+                                </div>
+                            </div>
+                        </div>
+                    `
+                    contenedorFavoritos.innerHTML += cardHTML
+                })
+        
+                // Función para eliminar un favorito
+                document.querySelectorAll(".btn-remove").forEach((boton) => {
+                    boton.addEventListener("click", (event) => {
+                        const breed = event.target.dataset.breed
+                        favoritos = favoritos.filter(gato => gato.breed !== breed)
+                        localStorage.setItem("favoritos", JSON.stringify(favoritos))
+                        location.reload() // Recargar la página para actualizar la lista
+                    })
+                })
+            })
+        </script>
     </div>
 </body>
 </html>

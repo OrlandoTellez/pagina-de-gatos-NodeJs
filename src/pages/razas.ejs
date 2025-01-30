@@ -41,6 +41,36 @@
 
             <%- include("../componentes/footer.ejs") %>
     </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const botonesFavoritos = document.querySelectorAll("#btn-favoritos");
+    
+            botonesFavoritos.forEach((boton) => {
+                boton.addEventListener("click", (event) => {
+                    const card = event.target.closest(".card");
+    
+                    const gato = {
+                        breed: card.querySelector("h3").innerText,
+                        size: card.querySelector("p:nth-of-type(1)").innerText.replace("Tamaño: ", ""),
+                        coat: card.querySelector("p:nth-of-type(2)").innerText.replace("Pelaje: ", ""),
+                        image: card.querySelector("img").src.split("/").pop().replace(".jpg", ""),
+                        characteristics: card.querySelector(".tags").innerText.split(", ")
+                    }
+    
+                    let favoritos = JSON.parse(localStorage.getItem("favoritos")) || [];
+    
+                    if (!favoritos.some(fav => fav.breed === gato.breed)) {
+                        favoritos.push(gato);
+                        localStorage.setItem("favoritos", JSON.stringify(favoritos));
+                        alert("Añadido a favoritos!");
+                    } else {
+                        alert("Este gato ya está en favoritos!");
+                    }
+                });
+            });
+        });
+    </script>
 </body>
 
 </html>
