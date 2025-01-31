@@ -44,32 +44,47 @@
 
     <script>
         document.addEventListener("DOMContentLoaded", () => {
-            const botonesFavoritos = document.querySelectorAll("#btn-favoritos");
-    
-            botonesFavoritos.forEach((boton) => {
-                boton.addEventListener("click", (event) => {
-                    const card = event.target.closest(".card");
-    
-                    const gato = {
-                        breed: card.querySelector("h3").innerText,
-                        size: card.querySelector("p:nth-of-type(1)").innerText.replace("Tamaño: ", ""),
-                        coat: card.querySelector("p:nth-of-type(2)").innerText.replace("Pelaje: ", ""),
-                        image: card.querySelector("img").src.split("/").pop().replace(".jpg", ""),
-                        characteristics: card.querySelector(".tags").innerText.split(", ")
-                    }
-    
-                    let favoritos = JSON.parse(localStorage.getItem("favoritos")) || [];
-    
-                    if (!favoritos.some(fav => fav.breed === gato.breed)) {
-                        favoritos.push(gato);
-                        localStorage.setItem("favoritos", JSON.stringify(favoritos));
-                        alert("Añadido a favoritos!");
-                    } else {
-                        alert("Este gato ya está en favoritos!");
-                    }
-                });
-            });
-        });
+    const botonesFavoritos = document.querySelectorAll("#btn-favoritos")
+
+    let favoritos = JSON.parse(localStorage.getItem("favoritos")) || []
+
+    botonesFavoritos.forEach((boton) => {
+        const card = boton.closest(".card")
+        const raza = card.querySelector("h3").innerText
+
+        if (favoritos.some(fav => fav.breed === raza)) {
+            boton.classList.add("favorito-activo")
+            boton.textContent = "Quitar de favoritos"
+        }
+
+        boton.addEventListener("click", (event) => {
+            const card = event.target.closest(".card")
+            const gato = {
+                breed: card.querySelector("h3").innerText,
+                size: card.querySelector("p:nth-of-type(1)").innerText.replace("Tamaño: ", ""),
+                coat: card.querySelector("p:nth-of-type(2)").innerText.replace("Pelaje: ", ""),
+                image: card.querySelector("img").src.split("/").pop().replace(".jpg", ""),
+                characteristics: card.querySelector(".tags").innerText.split(", ")
+            }
+
+            const index = favoritos.findIndex(fav => fav.breed === gato.breed)
+
+            if (index === -1) {
+                favoritos.push(gato)
+                boton.classList.add("favorito-activo")
+                boton.textContent = "Quitar de favoritos"
+
+            } else {
+                favoritos.splice(index, 1)
+                boton.classList.remove("favorito-activo")
+                boton.textContent = "Añadir a favoritos"
+
+            }
+
+            localStorage.setItem("favoritos", JSON.stringify(favoritos))
+        })
+    })
+})
     </script>
 </body>
 
