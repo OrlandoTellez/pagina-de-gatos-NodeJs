@@ -15,11 +15,11 @@
         
         <script>
             document.addEventListener("DOMContentLoaded", () => {
-                const contenedorFavoritos = document.getElementById("favoritos-container");
+                const contenedorFavoritos = document.getElementById("favoritos-container")
                 let favoritos = JSON.parse(localStorage.getItem("favoritos")) || []
         
                 if (favoritos.length === 0) {
-                    contenedorFavoritos.innerHTML = "<p>No hay favoritos aún.</p>";
+                    contenedorFavoritos.innerHTML = "<p>No hay favoritos aún.</p>"
                     return
                 }
         
@@ -41,13 +41,12 @@
                     contenedorFavoritos.innerHTML += cardHTML
                 })
         
-                // Función para eliminar un favorito
                 document.querySelectorAll(".btn-remove").forEach((boton) => {
                     boton.addEventListener("click", (event) => {
                         const breed = event.target.dataset.breed
                         favoritos = favoritos.filter(gato => gato.breed !== breed)
                         localStorage.setItem("favoritos", JSON.stringify(favoritos))
-                        location.reload() // Recargar la página para actualizar la lista
+                        location.reload() 
                     })
                 })
             })
