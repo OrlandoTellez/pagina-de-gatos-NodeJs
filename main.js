@@ -24,10 +24,8 @@ app.use((err, req, res, next) => {
 
 const PORT = process.env.PORT || 3001;
 
-if (process.env.NODE_ENV !== 'production') {
 app.listen(PORT, () => {
     console.log(`Servidor iniciado en: http://localhost:${PORT}`);
 });
-}
 
 export default app;
