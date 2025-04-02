@@ -3,11 +3,11 @@
   "version": "1.0.0",
   "main": "main.js",
   "type": "module",
-  "scripts": {
-    "start": "node main.js",
-    "dev": "nodemon main.js",
-    "build": "echo 'No build step required'"
-  },
+"scripts": {
+"start": "node main.js",
+"dev": "nodemon main.js",
+"build": "npm install --omit=dev"
+},
   "keywords": [],
   "author": "",
   "license": "ISC",
