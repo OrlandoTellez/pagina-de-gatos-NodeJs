@@ -1,15 +1,15 @@
 import express from "express";
 import path from "path";
 import { fileURLToPath } from "url";
-import router from "./src/routes/index.js";
+import router from "./routes/index.js";
 
 const app = express();
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
-app.set("views", path.join(__dirname, "src", "pages"));
+app.set("views", path.join(__dirname, "pages"));
 app.set("view engine", "ejs");
 
-app.use(express.static(path.join(__dirname, "src", "public")));
+app.use(express.static(path.join(__dirname, "public")));
 
 app.use(router);
 
