@@ -2,10 +2,11 @@ import express from "express";
 import path from "path";
 import { fileURLToPath } from "url";
 import router from "./routes/index.js";
-import serverless from 'serverless-http';
 
 const app = express();
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
+
+console.log("Directorio actual:", __dirname);
 
 // Configuraciones existentes
 app.set("views", path.join(__dirname, "pages"));
