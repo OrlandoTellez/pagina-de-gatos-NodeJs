@@ -24,10 +24,18 @@ app.use((err, req, res, next) => {
 
 const PORT = process.env.PORT || 3001;
 
+<<<<<<< HEAD
+=======
+// Solo iniciamos el servidor en desarrollo local, no en Vercel
+>>>>>>> 7dd6b0c188954ecd54a20bb4c5cb7affad328fae
 if (process.env.NODE_ENV !== 'production') {
 app.listen(PORT, () => {
     console.log(`Servidor iniciado en: http://localhost:${PORT}`);
 });
 }
 
+<<<<<<< HEAD
+=======
+// Exportamos la aplicación para que Vercel pueda utilizarla
+>>>>>>> 7dd6b0c188954ecd54a20bb4c5cb7affad328fae
 export default app;
