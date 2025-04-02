@@ -10,6 +10,7 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url));
 // Configuraciones existentes
 app.set("views", path.join(__dirname, "pages"));
 app.set("view engine", "ejs");
+
 app.use(express.static(path.join(__dirname, "public")));
 app.use(router);
 
@@ -23,13 +24,7 @@ app.use((err, req, res, next) => {
   res.status(500).send("Error interno del servidor");
 });
 
-const handler = serverless(app);
 
-if (process.env.NODE_ENV !== 'production') {
-  const PORT = process.env.PORT || 3001;
-  app.listen(PORT, () => {
-    console.log(`Servidor iniciado en: http://localhost:${PORT}`);
-  });
-}
-
-export default handler;
+export default (req, res) => {
+  app(req, res);
+};
