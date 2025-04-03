@@ -8,19 +8,19 @@
 </head>
 <body>
     <div class="body-container">
-        <%- include("componentes/header.ejs") %>
-        <%- include("componentes/hero.ejs") %>
+        <%- include("../componentes/header.ejs") %>
+        <%- include("../componentes/hero.ejs") %>
 
         <section class="featured">
             <h2>Razas Destacadas</h2>
             <div class="cards">
                 <% cards.forEach(card => { %>
-                  <%- include("componentes/card.ejs", card) %>
+                  <%- include("../componentes/card.ejs", card) %>
                 <% }) %>
             </div>
         </section>
         
-        <%- include("componentes/footer.ejs") %>
+        <%- include("../componentes/footer.ejs") %>
         
     </div>
 </body>

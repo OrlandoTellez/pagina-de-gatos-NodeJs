@@ -11,7 +11,7 @@
 
 <body>
     <div class="body-container">
-        <%- include("componentes/header.ejs") %>
+        <%- include("../componentes/header.ejs") %>
 
             <h2 class="main-title">Razas de Gatos</h2>
 
@@ -35,11 +35,11 @@
 
             <div class="cards">
                 <% cardsRaza.forEach(card => { %>
-                    <%- include("componentes/cardRaza.ejs", card) %>
+                    <%- include("../componentes/cardRaza.ejs", card) %>
                 <% }) %>
             </div>
 
-            <%- include("componentes/footer.ejs") %>
+            <%- include("../componentes/footer.ejs") %>
     </div>
 
     <script>
